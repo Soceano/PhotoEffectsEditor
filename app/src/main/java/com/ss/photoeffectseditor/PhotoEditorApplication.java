@@ -9,10 +9,10 @@ import android.view.WindowManager;
 import com.google.android.gms.analytics.GoogleAnalytics;
 import com.google.android.gms.analytics.Logger;
 import com.google.android.gms.analytics.Tracker;
-import com.ss.photoeffectseditor.models.ToolObject;
+import com.ss.photoeffectseditor.utils.GLog;
+import com.ss.photoeffectseditor.widget.BaseToolObject;
 import com.ss.photoeffectseditor.widget.ToolStructureBuilder;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -58,7 +58,7 @@ public class PhotoEditorApplication extends Application {
     public void onCreate() {
         super.onCreate();
         AppConfigs.getInstance().editorFeatures = buildEditorTools();
-
+        GLog.setLogMode(GLog.LogMode.VERBOSE);
         WindowManager windowManager = (WindowManager) getSystemService(Context.WINDOW_SERVICE);
         Display display = windowManager.getDefaultDisplay();
         DisplayMetrics metrics = new DisplayMetrics();
@@ -68,13 +68,8 @@ public class PhotoEditorApplication extends Application {
     }
 
 
-    private List<ToolObject> buildEditorTools() {
+    private List<BaseToolObject> buildEditorTools() {
         ToolStructureBuilder tb = new ToolStructureBuilder(this);
-        List<ToolObject> lst = new ArrayList<ToolObject>();
-        lst.add(tb.enhance());
-        lst.add(tb.effects());
-        lst.add(tb.brightness());
-        lst.add(tb.gamma());
-        return lst;
+        return tb.build();
     }
 }
