@@ -18,40 +18,9 @@ import java.util.List;
 
 public class PhotoEditorApplication extends Application {
 
-    private static final String PROPERTY_ID = "UA-xxxxxxxx-x";
-
-    public static int GENERAL_TRACKER = 0;
-
-    public enum TrackerName {
-        APP_TRACKER, GLOBAL_TRACKER, ECOMMERCE_TRACKER,
-    }
-
-    private HashMap<TrackerName, Tracker> mTrackers = new HashMap<TrackerName, Tracker>();
-
     public PhotoEditorApplication() {
         super();
 
-    }
-
-    public synchronized Tracker getTracker(TrackerName trackerId) {
-        if (!mTrackers.containsKey(trackerId)) {
-            GoogleAnalytics analytics = GoogleAnalytics.getInstance(this);
-            analytics.getLogger().setLogLevel(Logger.LogLevel.ERROR);
-            Tracker t = null;
-            if (trackerId == TrackerName.APP_TRACKER) {
-                t = analytics.newTracker(PROPERTY_ID);
-            } else if (trackerId == TrackerName.GLOBAL_TRACKER) {
-                t = analytics.newTracker(R.xml.global_tracker);
-            } else {
-                t = analytics.newTracker(R.xml.ecommerce_tracker);
-            }
-
-            t.enableExceptionReporting(true);
-            t.enableAdvertisingIdCollection(true);
-            mTrackers.put(trackerId, t);
-
-        }
-        return mTrackers.get(trackerId);
     }
 
     @Override
