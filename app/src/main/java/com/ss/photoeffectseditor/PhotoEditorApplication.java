@@ -13,7 +13,6 @@ import com.ss.photoeffectseditor.utils.GLog;
 import com.ss.photoeffectseditor.widget.BaseToolObject;
 import com.ss.photoeffectseditor.widget.ToolStructureBuilder;
 
-import java.util.HashMap;
 import java.util.List;
 
 public class PhotoEditorApplication extends Application {
