@@ -18,7 +18,7 @@ import java.util.List;
 
 public class PhotoEditorApplication extends Application {
 
-    private static final String PROPERTY_ID = "UA-54848763-7";
+    private static final String PROPERTY_ID = "UA-xxxxxxxx-x";
 
     public static int GENERAL_TRACKER = 0;
 
