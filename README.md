@@ -8,3 +8,8 @@ The goal of this project is building an app which help users can edit their phot
 If you have any questions about this project or want to reuse my code, please contact me!</br>
 Email: phamxuanlu@gmail.com
 
+<b>Libraries:</b><br/>
+<a href="https://github.com/MikeOrtiz/TouchImageView"> + TouchImageView by Mike Ortiz</a>
+<a href="https://github.com/sephiroth74/HorizontalVariableListView"> + HorizontalVariableListView by sephiroth74</a>
+
+Thank you!
