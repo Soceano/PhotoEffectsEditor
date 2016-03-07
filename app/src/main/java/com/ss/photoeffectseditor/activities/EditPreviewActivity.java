@@ -4,8 +4,6 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
-import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager.NameNotFoundException;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
@@ -17,11 +15,8 @@ import android.view.WindowManager;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
-import com.google.android.gms.analytics.HitBuilders;
-import com.google.android.gms.analytics.Tracker;
 import com.ss.photoeffectseditor.AppConfigs;
 import com.ss.photoeffectseditor.AppConstants;
-import com.ss.photoeffectseditor.PhotoEditorApplication;
 import com.ss.photoeffectseditor.R;
 import com.ss.photoeffectseditor.asynctasks.OpenBitmapAsyncTask;
 import com.ss.photoeffectseditor.dialogs.SavePhotoDialog;
@@ -131,24 +126,6 @@ public class EditPreviewActivity extends Activity {
         }
 
 
-    }
-
-    private void sendAnalyticsData() {
-        PackageInfo pkg = null;
-        try {
-            pkg = getPackageManager().getPackageInfo(getPackageName(), 0);
-        } catch (NameNotFoundException e) {
-            e.printStackTrace();
-        }
-        String verName = "N/A";
-        if (pkg != null) {
-            verName = pkg.versionName;
-        }
-        Tracker t = ((PhotoEditorApplication) getApplication())
-                .getTracker(PhotoEditorApplication.TrackerName.APP_TRACKER);
-        t.setScreenName(getString(R.string.app_name) + " EDITPREVIEW  version " + verName + " CHPLAY");
-        t.enableAdvertisingIdCollection(true);
-        t.send(new HitBuilders.AppViewBuilder().build());
     }
 
     private void setupViews() {

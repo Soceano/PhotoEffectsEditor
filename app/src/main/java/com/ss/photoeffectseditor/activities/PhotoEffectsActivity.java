@@ -49,7 +49,6 @@ public class PhotoEffectsActivity extends Activity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.photoeffects_activity_layout);
-
         setupViews();
     }
 
@@ -59,7 +58,7 @@ public class PhotoEffectsActivity extends Activity {
         btnOpenPhoto.setOnClickListener(viewClickListener);
         btnCamera = (TextView) findViewById(R.id.btnCapture);
         btnCamera.setOnClickListener(viewClickListener);
-        ((TextView) findViewById(R.id.btnFrames)).setOnClickListener(viewClickListener);
+        findViewById(R.id.btnFrames).setOnClickListener(viewClickListener);
         Typeface tf = Typeface.createFromAsset(getAssets(), AppConfigs.getInstance().TYPE_FACE);
         setupFont(activityLayout, tf);
 

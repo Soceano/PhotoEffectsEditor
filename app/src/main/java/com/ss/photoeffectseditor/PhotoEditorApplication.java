@@ -6,9 +6,6 @@ import android.util.DisplayMetrics;
 import android.view.Display;
 import android.view.WindowManager;
 
-import com.google.android.gms.analytics.GoogleAnalytics;
-import com.google.android.gms.analytics.Logger;
-import com.google.android.gms.analytics.Tracker;
 import com.ss.photoeffectseditor.utils.GLog;
 import com.ss.photoeffectseditor.widget.BaseToolObject;
 import com.ss.photoeffectseditor.widget.ToolStructureBuilder;
