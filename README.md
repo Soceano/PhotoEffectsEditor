@@ -1,3 +1,5 @@
+<a href="https://app.codesponsor.io/link/rbu8koE56V7Z3ANmW2GeSvPJ/phamxuanlu/PhotoEffectsEditor" rel="nofollow"><img src="https://app.codesponsor.io/embed/rbu8koE56V7Z3ANmW2GeSvPJ/phamxuanlu/PhotoEffectsEditor.svg" style="width: 888px; height: 68px;" alt="Sponsor" /></a>
+
 # Image Editor
 <b>Android Photo Editor</b>
 
